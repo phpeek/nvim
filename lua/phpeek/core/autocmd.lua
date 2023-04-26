@@ -1,4 +1,7 @@
+-- WSL hack for copying and pasting from system clipboard
+-- more info :help clipboard-wsl
 local wsl_clip = function()
+  -- do not run when when not in WSL environment
   if vim.fn.has "wsl" == 1 then
     vim.g.clipboard = {
       name = 'WslClipboard',

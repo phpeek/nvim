@@ -47,6 +47,8 @@ return require('packer').startup(function(use)
   -- training plugins
   use 'ThePrimeagen/vim-be-good' -- movements training from ThePrimeagen
 
+  use 'fladson/vim-kitty' -- syntax highlighting for kitty terminal
+
   -- automatically set up your configuration after cloning packer.nvim
   -- put this at the end after all plugins
   if packer_boostrap then
