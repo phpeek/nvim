@@ -38,11 +38,9 @@ return require('packer').startup(function(use)
   use 'rafamadriz/friendly-snippets' -- snippets collection
 
   -- lsp 
+  use 'williamboman/mason.nvim' -- package manager for lsp servers
+  use 'williamboman/mason-lspconfig.nvim' -- makes it easier to use mason with lspconfig 
   use 'neovim/nvim-lspconfig' -- quickstart configs for nvim lsp
-  use {
-    'williamboman/mason.nvim', -- package manager for lsp servers
-    run = ':MasonUpdate'
-  }
 
   -- training plugins
   use 'ThePrimeagen/vim-be-good' -- movements training from ThePrimeagen
