@@ -31,6 +31,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer' -- buffer completions
   use 'hrsh7th/cmp-path' -- path completions
   use 'hrsh7th/cmp-cmdline' -- cmd line completions
+  use 'hrsh7th/cmp-nvim-lsp' -- source for nvim lsp client 
 
   -- snippets
   use 'L3MON4D3/LuaSnip' -- snippets engine

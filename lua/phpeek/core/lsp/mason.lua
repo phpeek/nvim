@@ -1,3 +1,7 @@
+
+--------------------------------------------------------------------------------
+-- Mason setup script
+--------------------------------------------------------------------------------
 local mason_ok, mason = pcall(require, 'mason')
 local mason_lspconfig_ok, mason_lspconfig = pcall(require, 'mason-lspconfig')
 
