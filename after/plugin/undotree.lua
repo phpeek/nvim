@@ -1,2 +1,4 @@
+local map = require('phpeek.utils').map
+
 -- remap for undoing trees
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+map('n', '<leader>u', vim.cmd.UndotreeToggle)
