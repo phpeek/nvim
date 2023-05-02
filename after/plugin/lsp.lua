@@ -5,7 +5,7 @@ if not lsp_ok then
   return
 end
 
-lsp.preset({})
+lsp.preset('recommended')
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
@@ -31,3 +31,16 @@ lsp.ensure_installed({
 })
 
 lsp.setup()
+
+-- autocompletion setup
+local cmp_status, cmp = pcall(require, 'cmp')
+
+if not cmp_status then
+  return
+end
+
+cmp.setup({
+  mapping = {
+    ['<C-Space>'] = cmp.mapping.complete(),
+  }
+})
