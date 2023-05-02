@@ -2,16 +2,7 @@
 -- Define keymaps of Neovim and installed plugins.
 --------------------------------------------------------------------------------
 
--- local function for easy keymaps with default options
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap = true, silent = true }
-  
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local map = require('phpeek.utils').map
 
 -- change leader to a space
 map('', '<space>', '<nop>')
@@ -21,6 +12,9 @@ vim.g.maplocalleader = ' '
 --------------------------------------------------------------------------------
 -- Neovim shortcuts
 --------------------------------------------------------------------------------
+
+-- go to to Netrw faster
+map('n', '<leader>pv', vim.cmd.Ex)
 
 -- disable arrow keys
 map('', '<up>', '<nop>')
@@ -39,7 +33,3 @@ map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
-
-
-
-
