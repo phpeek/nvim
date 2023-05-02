@@ -47,23 +47,28 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive' -- git integration
 
   use 'folke/tokyonight.nvim' -- color schemes
-  
-  -- completion plugins
-  use 'hrsh7th/nvim-cmp' -- completion plugin
-  use 'hrsh7th/cmp-buffer' -- buffer completions
-  use 'hrsh7th/cmp-path' -- path completions
-  use 'hrsh7th/cmp-cmdline' -- cmd line completions
-  use 'hrsh7th/cmp-nvim-lsp' -- source for nvim lsp client 
 
-  -- snippets
-  use 'L3MON4D3/LuaSnip' -- snippets engine
-  use 'saadparwaiz1/cmp_luasnip' -- luasnip completion source for nvim-cmp 
-  use 'rafamadriz/friendly-snippets' -- snippets collection
+  -- lsp setup
+  use {
+    'VonHeikemen/lsp-zero.nvim',
+    branch = 'v2.x',
+    requires = {
+      -- LSP Support
+      'neovim/nvim-lspconfig',             -- Required
+      {                                      -- Optional
+        'williamboman/mason.nvim',
+        run = function()
+          pcall(vim.cmd, 'MasonUpdate')
+        end,
+      },
+      'williamboman/mason-lspconfig.nvim', -- Optional
 
-  -- lsp 
-  use 'williamboman/mason.nvim' -- package manager for lsp servers
-  use 'williamboman/mason-lspconfig.nvim' -- makes it easier to use mason with lspconfig 
-  use 'neovim/nvim-lspconfig' -- quickstart configs for nvim lsp
+      -- Autocompletion
+      'hrsh7th/nvim-cmp',     -- Required
+      'hrsh7th/cmp-nvim-lsp', -- Required
+      'L3MON4D3/LuaSnip',     -- Required
+    }
+  }
 
   -- training
   use 'ThePrimeagen/vim-be-good' -- movements training from ThePrimeagen

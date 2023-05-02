@@ -7,6 +7,4 @@ require("phpeek.packer")
 require('phpeek.core.options')
 require('phpeek.core.keymaps')
 require('phpeek.core.autocmd')
-require('phpeek.core.completions')
-require('phpeek.core.lsp')
 
