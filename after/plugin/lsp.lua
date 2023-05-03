@@ -48,6 +48,7 @@ end
 
 cmp.setup({
   mapping = {
+    -- enable autocomplete on Ctrl + Space
     ['<C-Space>'] = cmp.mapping.complete(),
   }
 })
