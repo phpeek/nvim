@@ -1,3 +1,4 @@
+local map = require('phpeek.utils').map
 local lsp_ok, lsp = pcall(require, 'lsp-zero')
 
 -- if lsp-zero is not present, do nothing
@@ -9,6 +10,12 @@ lsp.preset('recommended')
 
 lsp.on_attach(function(client, bufnr)
   lsp.default_keymaps({buffer = bufnr})
+
+  -- override some of the deafult lsp key bindings
+  local opts = { buffer = bufnr }
+
+  map('n', '<leader>vrn', function() vim.lsp.buf.rename() end, opts)
+  map('n', '<leader>vrr', function() vim.lsp.buf.references() end, opts)
 end)
 
 local lspconfig_status, lspconfig = pcall(require, 'lspconfig')
