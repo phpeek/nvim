@@ -70,7 +70,6 @@ return require('packer').startup(function(use)
     }
   }
 
-  -- training
   use 'ThePrimeagen/vim-be-good' -- movements training from ThePrimeagen
 
   use 'fladson/vim-kitty' -- syntax highlighting for kitty terminal

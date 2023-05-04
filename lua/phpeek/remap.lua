@@ -23,6 +23,7 @@ map('', '<left>', '<nop>')
 map('', '<right>', '<nop>')
 
 -- escaping insert mode
+map('i', '<esc>', '<nop>') -- disable esc for exiting insert mode
 map('i', 'kk', '<esc>')
 
 -- toggling explorer
