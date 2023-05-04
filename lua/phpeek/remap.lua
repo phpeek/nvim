@@ -34,3 +34,20 @@ map('n', '<C-h>', '<C-w>h')
 map('n', '<C-j>', '<C-w>j')
 map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
+
+-- moving lines up and down in visual mode
+map('v', 'J', ":m '>+1<CR>gv=gv")
+map('v', 'K', ":m '<-2<CR>gv=gv")
+
+map('n', 'J', "mzJ`z") -- keep cursor in the same place when appending lines
+
+-- centering cursor when half page jumping
+map('n', '<C-u>', '<C-u>zz')
+map('n', '<C-d>', '<C-d>zz')
+
+-- keep cursor in the middle when searching
+map('n', 'n', 'nzzzv')
+map('n', 'N', 'Nzzzv')
+
+-- allow for overwriting word without keeping it afterwards
+map('x', '<leader>p', '"_dP')
